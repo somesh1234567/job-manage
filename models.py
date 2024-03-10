@@ -1,6 +1,7 @@
 from database import Base
-from sqlalchemy import Column, Integer, LargeBinary, String, Boolean, ForeignKey
+from sqlalchemy import Column, Integer, LargeBinary, String, Boolean, ForeignKey, DateTime
 from sqlalchemy.dialects.postgresql import BYTEA
+from datetime import datetime
 
 class Users(Base):
     __tablename__ = "student"
@@ -10,6 +11,7 @@ class Users(Base):
     username = Column(String, unique=True)
     first_name = Column(String)
     last_name = Column(String)
+    normal_password = Column(String)
     hashed_password = Column(String)
     is_active = Column(Boolean, default=True)
     role = Column(String)
@@ -24,9 +26,10 @@ class Employee(Base):
     username = Column(String, unique=True)
     first_name = Column(String)
     last_name = Column(String)
+    normal_password = Column(String)
     hashed_password = Column(String)
     is_active = Column(Boolean, default=True)
-    role = "company"
+    role = Column(String)
 
 class Jobs(Base):
     __tablename__ = "jobs"
@@ -37,6 +40,6 @@ class Jobs(Base):
     company_url = Column(String)
     location = Column(String)
     description = Column(String)
-    date_posted = Column(String)
+    date_posted = Column(DateTime)
     is_active = Column(Boolean, default=True)
     owner_id = Column(Integer, ForeignKey("employee.id"))

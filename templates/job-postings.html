@@ -1,7 +1,10 @@
 {% include 'layout.html' %}
 <div class="container">
+    <div>
+        <a href="/jobs/create-job" class="btn btn-primary">Create a new Job</a>  
+    </div>
     <div class="row" style="margin-top: 30px;">
-        {% for job in all_jobs %}
+        {% for job in jobs %}
         <div class="col-sm-6">
             <div class="card">
                 <div class="card-body">
@@ -9,7 +12,7 @@
                     <p class="card-text">{{job.description}}</p>
                     <p class="card-text">Company Name: {{job.company}}</p>
                     <p class="card-text">Date Posted: {{job.date_posted}}</p>
-                    <a href="#" class="btn btn-primary">Apply</a>
+                    <a href="#" class="btn btn-primary">Edit this job</a>
                 </div>
             </div>
         </div>
