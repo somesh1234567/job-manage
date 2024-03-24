@@ -1,0 +1,15 @@
+{% include 'layout.html' %}
+<div class="container" style="margin-top: 20px;">
+    <form method="POST">
+        <div class="mb-3">
+            <label class="form-label">Title</label>
+            <input type="text" name="title" class="form-control" value="{{job.title}}" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Description</label>
+            <textarea type="text" name="description" class="form-control" value="{{job.description}}" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <a href="/jobs/job-details" class="btn btn-danger">Back to Jobs</a> 
+    </form>
+</div>

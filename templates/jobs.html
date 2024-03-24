@@ -9,7 +9,7 @@
                     <p class="card-text">{{job.description}}</p>
                     <p class="card-text">Company Name: {{job.company}}</p>
                     <p class="card-text">Date Posted: {{job.date_posted}}</p>
-                    <a href="#" class="btn btn-primary">Apply</a>
+                    <a onclick="window.location.href='apply/{{job.id}}'" class="btn btn-primary">Apply</a>
                 </div>
             </div>
         </div>

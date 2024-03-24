@@ -12,7 +12,8 @@
                     <p class="card-text">{{job.description}}</p>
                     <p class="card-text">Company Name: {{job.company}}</p>
                     <p class="card-text">Date Posted: {{job.date_posted}}</p>
-                    <a href="#" class="btn btn-primary">Edit this job</a>
+                    <a href="/jobs/edit-job/{{job.id}}" class="btn btn-primary">Edit this job</a>
+                    <a href="/jobs/display-details/{{job.id}}" class="btn btn-success">List of Students</a>
                 </div>
             </div>
         </div>

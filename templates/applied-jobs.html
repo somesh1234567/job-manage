@@ -1,0 +1,34 @@
+{% include 'layout.html' %}
+{% if student_details %}
+<div class="container">
+    <div class="container">
+        <h1>List of the students who have applied</h1>
+    </div>
+    <div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Sl no</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Resume</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for student in student_details %}
+                <tr>
+                    <th scope="row">{{loop.index}}</th>
+                    <td>{{student.first_name}}</td>
+                    <td>{{student.last_name}}</td>
+                    <td><a href="data:application/pdf;base64,{{student.resume}}" download="{{student.first_name}}{{student.last_name}}.pdf">Download Resume</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% else %}
+<div class="container">
+    <h2>No students have applied for this job yet!</h2>
+</div>
+{% endif %}
