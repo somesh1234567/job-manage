@@ -128,4 +128,8 @@ async def display_pdf(request: Request, job_id: int,  db: Session = Depends(get_
     # logger.info(f"Student details with resume: {details}")
 
     return templates.TemplateResponse("applied-jobs.html", {"request": request, "student_details": details, "user": user})
+
+@router.get("/sample" , response_class=HTMLResponse)
+async def sample(request: Request):
+    return templates.TemplateResponse("sample.html", {"request": request})
     
